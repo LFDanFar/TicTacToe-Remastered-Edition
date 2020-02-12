@@ -1,4 +1,4 @@
 package com.example.tictactoeremastered
 
-class TitleFragment {
+class GameFragment {
 }
