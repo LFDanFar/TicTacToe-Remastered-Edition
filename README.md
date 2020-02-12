@@ -1,1 +1,1 @@
-TicTacToe Remastered Edition
+TicTacToeRemastered
