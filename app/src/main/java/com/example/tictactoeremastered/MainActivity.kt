@@ -1,11 +1,13 @@
 package com.example.tictactoeremastered
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -15,10 +17,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        val currentFragment =
+            supportFragmentManager.findFragmentById(R.id.game_fragment)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        val buttonPlay = findViewById(R.id.buttonPlayStart) as Button
+
+        buttonPlay.setOnClickListener{
+            if (currentFragment == null){
+                val fragment = GameFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .add(R.id.game_fragment, fragment)
+                    .commit()
+            }
+            val intent = Intent(this, GameFragment::class.java)
+            startActivity(intent)
         }
     }
 
