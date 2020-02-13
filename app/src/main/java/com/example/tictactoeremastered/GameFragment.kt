@@ -33,15 +33,17 @@ class GameFragment : Fragment() {
     ): View? {
         //return super.onCreateView(inflater, container, savedInstanceState)
         val view = inflater.inflate(R.layout.fragment_game, container, false)
-        butt1 = view.findViewById(R.id.button1) as Button
-        butt2 = view.findViewById(R.id.button2) as Button
-        butt3 = view.findViewById(R.id.button3) as Button
-        butt4 = view.findViewById(R.id.button4) as Button
-        butt5 = view.findViewById(R.id.button5) as Button
-        butt6 = view.findViewById(R.id.button6) as Button
-        butt7 = view.findViewById(R.id.button7) as Button
-        butt8 = view.findViewById(R.id.button8) as Button
-        butt9 = view.findViewById(R.id.button9) as Button
+        val butt1 = view.findViewById(R.id.button1) as Button
+        val butt2 = view.findViewById(R.id.button2) as Button
+        val butt3 = view.findViewById(R.id.button3) as Button
+        val butt4 = view.findViewById(R.id.button4) as Button
+        val butt5 = view.findViewById(R.id.button5) as Button
+        val butt6 = view.findViewById(R.id.button6) as Button
+        val butt7 = view.findViewById(R.id.button7) as Button
+        val butt8 = view.findViewById(R.id.button8) as Button
+        val butt9 = view.findViewById(R.id.button9) as Button
+        val buttonReplay = view.findViewById(R.id.buttonPlayAgain) as Button
+        val buttonShare = view.findViewById(R.id.buttonShareGame) as Button
 
         return view
     }
@@ -67,7 +69,7 @@ class GameFragment : Fragment() {
         var b8 = 80
         var b9 = 90
 
-        val button1 = findViewById(R.id.button1) as Button
+        /*val button1 = findViewById(R.id.button1) as Button
         val button2 = findViewById(R.id.button2) as Button
         val button3 = findViewById(R.id.button3) as Button
         val button4 = findViewById(R.id.button4) as Button
@@ -76,7 +78,7 @@ class GameFragment : Fragment() {
         val button7 = findViewById(R.id.button7) as Button
         val button8 = findViewById(R.id.button8) as Button
         val button9 = findViewById(R.id.button9) as Button
-        val buttonPlayAgain = findViewById(R.id.buttonPlayAgain) as Button
+        val buttonPlayAgain = findViewById(R.id.buttonPlayAgain) as Button*/
 
         button1.setOnClickListener{
             if (turn%2 == 1) {
@@ -90,9 +92,9 @@ class GameFragment : Fragment() {
             if(b1 == b2 && b1 == b3){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -106,9 +108,9 @@ class GameFragment : Fragment() {
             if(b1 == b4 && b1 == b7){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -122,9 +124,9 @@ class GameFragment : Fragment() {
             if(b1 == b5 && b1 == b9){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -138,7 +140,7 @@ class GameFragment : Fragment() {
             turn += 1
             button1.isClickable = false
             if (turn == 10){
-                Toast.makeText(this, "$dootDraw", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "$dootDraw", Toast.LENGTH_SHORT).show()
             }
         }
         button2.setOnClickListener{
@@ -153,9 +155,9 @@ class GameFragment : Fragment() {
             if(b1 == b2 && b1 == b3){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -169,9 +171,9 @@ class GameFragment : Fragment() {
             if(b2 == b5 && b5 == b8){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -185,7 +187,7 @@ class GameFragment : Fragment() {
             turn += 1
             button2.isClickable = false
             if (turn == 10){
-                Toast.makeText(this, "$dootDraw", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "$dootDraw", Toast.LENGTH_SHORT).show()
             }
         }
         button3.setOnClickListener{
@@ -200,9 +202,9 @@ class GameFragment : Fragment() {
             if(b1 == b2 && b1 == b3){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -216,9 +218,9 @@ class GameFragment : Fragment() {
             if(b3 == b5 && b7 == b3){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -232,9 +234,9 @@ class GameFragment : Fragment() {
             if(b3 == b6 && b9 == b3){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -248,7 +250,7 @@ class GameFragment : Fragment() {
             turn += 1
             button3.isClickable = false
             if (turn == 10){
-                Toast.makeText(this, "$dootDraw", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "$dootDraw", Toast.LENGTH_SHORT).show()
             }
         }
         button4.setOnClickListener{
@@ -263,20 +265,20 @@ class GameFragment : Fragment() {
             if(b1 == b4 && b1 == b7){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
             }
             if(b4 == b5 && b4 == b6){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()            }
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()            }
             turn += 1
             button4.isClickable = false
             if (turn == 10){
-                Toast.makeText(this, "$dootDraw", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "$dootDraw", Toast.LENGTH_SHORT).show()
             }
         }
         button5.setOnClickListener{
@@ -291,9 +293,9 @@ class GameFragment : Fragment() {
             if(b1 == b5 && b1 == b9){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -307,9 +309,9 @@ class GameFragment : Fragment() {
             if(b2 == b5 && b2 == b8){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -323,9 +325,9 @@ class GameFragment : Fragment() {
             if(b3 == b5 && b7 == b3){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -339,9 +341,9 @@ class GameFragment : Fragment() {
             if(b4 == b5 && b4 == b6){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -355,7 +357,7 @@ class GameFragment : Fragment() {
             turn += 1
             button5.isClickable = false
             if (turn == 10){
-                Toast.makeText(this, "$dootDraw", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "$dootDraw", Toast.LENGTH_SHORT).show()
             }
         }
         button6.setOnClickListener{
@@ -370,9 +372,9 @@ class GameFragment : Fragment() {
             if(b3 == b6 && b9 == b3){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -386,9 +388,9 @@ class GameFragment : Fragment() {
             if(b4 == b5 && b4 == b6){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -402,7 +404,7 @@ class GameFragment : Fragment() {
             button6.isClickable = false
             turn += 1
             if (turn == 10){
-                Toast.makeText(this, "$dootDraw", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "$dootDraw", Toast.LENGTH_SHORT).show()
             }
         }
         button7.setOnClickListener{
@@ -417,9 +419,9 @@ class GameFragment : Fragment() {
             if(b1 == b4 && b1 == b7){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -433,9 +435,9 @@ class GameFragment : Fragment() {
             if(b3 == b5 && b7 == b3){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -449,9 +451,9 @@ class GameFragment : Fragment() {
             if(b7 == b8 && b7 == b9){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -465,7 +467,7 @@ class GameFragment : Fragment() {
             turn += 1
             button7.isClickable = false
             if (turn == 10){
-                Toast.makeText(this, "$dootDraw", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "$dootDraw", Toast.LENGTH_SHORT).show()
             }
         }
         button8.setOnClickListener{
@@ -480,9 +482,9 @@ class GameFragment : Fragment() {
             if(b2 == b5 && b5 == b8){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -496,9 +498,9 @@ class GameFragment : Fragment() {
             if(b7 == b8 && b7 == b9){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -512,7 +514,7 @@ class GameFragment : Fragment() {
             turn += 1
             button8.isClickable = false
             if (turn == 10){
-                Toast.makeText(this, "$dootDraw", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "$dootDraw", Toast.LENGTH_SHORT).show()
             }
         }
         button9.setOnClickListener{
@@ -527,9 +529,9 @@ class GameFragment : Fragment() {
             if(b1 == b5 && b1 == b9){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -543,9 +545,9 @@ class GameFragment : Fragment() {
             if(b3 == b6 && b9 == b3){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
 
                 button1.isClickable = false
                 button2.isClickable = false
@@ -559,9 +561,9 @@ class GameFragment : Fragment() {
             if(b7 == b8 && b7 == b9){
                 turn %= 2
                 if (turn == 1)
-                    Toast.makeText(this, "$dootX", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootX", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this, "$dootO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "$dootO", Toast.LENGTH_SHORT).show()
                 button1.isClickable = false
                 button2.isClickable = false
                 button3.isClickable = false
@@ -575,7 +577,7 @@ class GameFragment : Fragment() {
             turn += 1
             button9.isClickable = false
             if (turn == 10){
-                Toast.makeText(this, "$dootDraw", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "$dootDraw", Toast.LENGTH_SHORT).show()
             }
         }
         buttonPlayAgain.setOnClickListener{
@@ -613,7 +615,7 @@ class GameFragment : Fragment() {
     }
 
 
-    override fun onSaveInstanceState(savedInstanceState: Bundle?) {
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
         super.onSaveInstanceState(savedInstanceState)
         if (savedInstanceState != null) {
             savedInstanceState.putInt(KEY_INDEX, tViewModel.currentIndex)
