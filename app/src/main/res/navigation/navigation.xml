@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.tictactoeremastered.GameFragment"
+        android:label="GameFragment" >
+        <action
+            android:id="@+id/action_gameFragment_to_winFragment"
+            app:destination="@id/winFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_loseFragment"
+            app:destination="@id/loseFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_chooseFragment"
+            app:destination="@id/chooseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loseFragment"
+        android:name="com.example.tictactoeremastered.LoseFragment"
+        android:label="LoseFragment" />
+    <fragment
+        android:id="@+id/winFragment"
+        android:name="com.example.tictactoeremastered.WinFragment"
+        android:label="WinFragment" />
+    <activity
+        android:id="@+id/chooseFragment"
+        android:name="com.example.tictactoeremastered.ChooseFragment"
+        android:label="ChooseFragment" />
+    <activity
+        android:id="@+id/titleFragment"
+        android:name="com.example.tictactoeremastered.TitleFragment"
+        android:label="TitleFragment"
+        tools:layout="@layout/activity_title_fragment" />
+</navigation>
