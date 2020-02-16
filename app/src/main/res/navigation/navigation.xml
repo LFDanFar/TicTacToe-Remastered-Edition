@@ -22,18 +22,30 @@
     <fragment
         android:id="@+id/loseFragment"
         android:name="com.example.tictactoeremastered.LoseFragment"
-        android:label="LoseFragment" />
+        android:label="LoseFragment" >
+        <action
+            android:id="@+id/action_loseFragment_to_titleFragment"
+            app:popUpTo="@id/titleFragment" />
+    </fragment>
     <fragment
         android:id="@+id/winFragment"
         android:name="com.example.tictactoeremastered.WinFragment"
-        android:label="WinFragment" />
-    <activity
+        android:label="WinFragment" >
+        <action
+            android:id="@+id/action_winFragment_to_titleFragment"
+            app:popUpTo="@id/titleFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/chooseFragment"
         android:name="com.example.tictactoeremastered.ChooseFragment"
         android:label="ChooseFragment" />
-    <activity
+    <fragment
         android:id="@+id/titleFragment"
         android:name="com.example.tictactoeremastered.TitleFragment"
         android:label="TitleFragment"
-        tools:layout="@layout/activity_title_fragment" />
+        tools:layout="@layout/activity_title_fragment" >
+        <action
+            android:id="@+id/action_titleFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
 </navigation>
