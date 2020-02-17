@@ -44,7 +44,6 @@ class GameFragment : Fragment() {
         val butt9 = view.findViewById(R.id.button9) as Button
         val buttonReplay = view.findViewById(R.id.buttonPlayAgain) as Button
         val buttonShare = view.findViewById(R.id.buttonShareGame) as Button
-
         return view
     }
 
@@ -68,17 +67,16 @@ class GameFragment : Fragment() {
         var b7 = 70
         var b8 = 80
         var b9 = 90
-
-        /*val button1 = findViewById(R.id.button1) as Button
-        val button2 = findViewById(R.id.button2) as Button
-        val button3 = findViewById(R.id.button3) as Button
-        val button4 = findViewById(R.id.button4) as Button
-        val button5 = findViewById(R.id.button5) as Button
-        val button6 = findViewById(R.id.button6) as Button
-        val button7 = findViewById(R.id.button7) as Button
-        val button8 = findViewById(R.id.button8) as Button
-        val button9 = findViewById(R.id.button9) as Button
-        val buttonPlayAgain = findViewById(R.id.buttonPlayAgain) as Button*/
+        val button1 = view?.findViewById(R.id.button1) as Button
+        val button2 = view?.findViewById(R.id.button2) as Button
+        val button3 = view?.findViewById(R.id.button3) as Button
+        val button4 = view?.findViewById(R.id.button4) as Button
+        val button5 = view?.findViewById(R.id.button5) as Button
+        val button6 = view?.findViewById(R.id.button6) as Button
+        val button7 = view?.findViewById(R.id.button7) as Button
+        val button8 = view?.findViewById(R.id.button8) as Button
+        val button9 = view?.findViewById(R.id.button9) as Button
+        val buttonPlayAgain = view?.findViewById(R.id.buttonPlayAgain) as Button
 
         button1.setOnClickListener{
             if (turn%2 == 1) {
@@ -612,6 +610,10 @@ class GameFragment : Fragment() {
             b8 = b1
             b9 = b1
         }
+
+        /*buttonShareGame.setOnClickListener {
+            Navigation.createNavigationOnClickListener(R.id.shareFragment)
+        }*/
     }
 
 

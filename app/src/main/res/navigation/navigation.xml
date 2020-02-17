@@ -19,16 +19,37 @@
             app:popUpTo="@id/titleFragment" />
         <action
             android:id="@+id/action_gameFragment_to_chooseFragment"
-            app:destination="@id/chooseFragment" />
+            app:destination="@id/chooseFragment"
+            app:popUpTo="@+id/titleFragment"
+            app:popUpToInclusive="false" />
+        <deepLink
+            android:id="@+id/deepLink4"
+            app:uri="https://www.deepLinkTitle/" />
     </fragment>
     <fragment
         android:id="@+id/loseFragment"
         android:name="com.example.tictactoeremastered.LoseFragment"
-        android:label="LoseFragment" />
+        android:label="LoseFragment" >
+        <action
+            android:id="@+id/returnToTitle"
+            app:destination="@id/titleFragment"
+            app:popUpTo="@+id/titleFragment"/>
+        <deepLink
+            android:id="@+id/deepLink5"
+            app:uri="https://www.deepLinkTitle/" />
+    </fragment>
     <fragment
         android:id="@+id/winFragment"
         android:name="com.example.tictactoeremastered.WinFragment"
-        android:label="WinFragment" />
+        android:label="WinFragment" >
+        <action
+            android:id="@+id/returnToTitle"
+            app:destination="@id/titleFragment"
+            app:popUpTo="@+id/titleFragment"/>
+        <deepLink
+            android:id="@+id/deepLink6"
+            app:uri="https://www.deepLinkTitle/" />
+    </fragment>
     <fragment
         android:id="@+id/chooseFragment"
         android:name="com.example.tictactoeremastered.ChooseFragment"
@@ -36,12 +57,23 @@
         <action
             android:id="@+id/action_chooseFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/returnToTitle"
+            app:destination="@id/titleFragment"
+            app:popUpTo="@+id/titleFragment"/>
+        <deepLink
+            android:id="@+id/deepLink3"
+            app:uri="https://www.deepLinkTitle/" />
     </fragment>
     <fragment
         android:id="@+id/titleFragment"
         android:name="com.example.tictactoeremastered.TitleFragment"
         android:label="TitleFragment"
         tools:layout="@layout/activity_title_fragment" >
+        <action
+            android:id="@+id/returnToTitle"
+            app:destination="@id/titleFragment"
+            app:popUpTo="@+id/titleFragment"/>
         <action
             android:id="@+id/action_titleFragment_to_gameFragment"
             app:destination="@id/gameFragment" />

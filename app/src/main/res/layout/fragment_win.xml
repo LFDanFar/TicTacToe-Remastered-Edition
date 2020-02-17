@@ -10,5 +10,15 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/happy_pepe" />
+        app:srcCompat="@drawable/happy_pepe"
+        />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/navigation"
+        app:defaultNavHost="true"/>
+
 </LinearLayout>

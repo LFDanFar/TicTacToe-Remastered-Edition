@@ -40,4 +40,12 @@
         android:text="Play Game"
         android:layout_gravity="bottom|center_horizontal"/>
 
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/navigation"
+        app:defaultNavHost="true"/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

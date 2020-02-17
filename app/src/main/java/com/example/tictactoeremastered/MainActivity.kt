@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import androidx.navigation.Navigation
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         val currentFragment =
             supportFragmentManager.findFragmentById(R.id.game_fragment)
 
-        val buttonPlay = findViewById(R.id.buttonPlayStart) as Button
+        val buttonPlay = findViewById<Button>(R.id.buttonPlayStart)
 
         buttonPlay.setOnClickListener{
             if (currentFragment == null){
@@ -30,8 +31,9 @@ class MainActivity : AppCompatActivity() {
                     .add(R.id.game_fragment, fragment)
                     .commit()
             }
-            val intent = Intent(this, GameFragment::class.java)
-            startActivity(intent)
+            //val intent = Intent(this, GameFragment::class.java)
+            //startActivity(intent)
+            Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment)
         }
     }
 
