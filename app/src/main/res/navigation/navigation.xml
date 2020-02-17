@@ -11,10 +11,12 @@
         android:label="GameFragment" >
         <action
             android:id="@+id/action_gameFragment_to_winFragment"
-            app:destination="@id/winFragment" />
+            app:destination="@id/winFragment"
+            app:popUpTo="@id/titleFragment" />
         <action
             android:id="@+id/action_gameFragment_to_loseFragment"
-            app:destination="@id/loseFragment" />
+            app:destination="@id/loseFragment"
+            app:popUpTo="@id/titleFragment" />
         <action
             android:id="@+id/action_gameFragment_to_chooseFragment"
             app:destination="@id/chooseFragment" />
@@ -22,23 +24,19 @@
     <fragment
         android:id="@+id/loseFragment"
         android:name="com.example.tictactoeremastered.LoseFragment"
-        android:label="LoseFragment" >
-        <action
-            android:id="@+id/action_loseFragment_to_titleFragment"
-            app:popUpTo="@id/titleFragment" />
-    </fragment>
+        android:label="LoseFragment" />
     <fragment
         android:id="@+id/winFragment"
         android:name="com.example.tictactoeremastered.WinFragment"
-        android:label="WinFragment" >
-        <action
-            android:id="@+id/action_winFragment_to_titleFragment"
-            app:popUpTo="@id/titleFragment" />
-    </fragment>
+        android:label="WinFragment" />
     <fragment
         android:id="@+id/chooseFragment"
         android:name="com.example.tictactoeremastered.ChooseFragment"
-        android:label="ChooseFragment" />
+        android:label="ChooseFragment" >
+        <action
+            android:id="@+id/action_chooseFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
     <fragment
         android:id="@+id/titleFragment"
         android:name="com.example.tictactoeremastered.TitleFragment"
